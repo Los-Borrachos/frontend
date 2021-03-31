@@ -15,11 +15,21 @@ const Clients = () => {
 	return (
 		<div className='clients'>
 			<p>rendered</p>
-			<ul>
 				{clients.map((item) => {
-					return <li>{item.name}</li>;
+					return <div key={item.id}>
+						<container className='client-card'>
+							<h3>{item.name}</h3>
+						<ul>
+							<li>Organizaion: {item.organization}</li>
+							<li>Email: {item.email}</li>
+							<li>Next Steps: {item.nextSteps}</li>
+							<li>Sales Stage: {item.salesStage}</li>
+							<li>Total Revenue: {item.totalRevenue}</li>
+						</ul>
+						</container>
+						</div>
 				})}
-			</ul>
+
 		</div>
 	);
 };
