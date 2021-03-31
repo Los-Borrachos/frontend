@@ -7,13 +7,18 @@ function App() {
 	return (
 		<div className='App'>
 			<nav className='app-nav'>
-				<div>
 					{/* <Link to='/'>
 						{' '}
 						<img src={logo} alt='logo' />
 					</Link> */}
-					<h1>Hound</h1>
-				</div>
+				<Link 
+				className='app-name'
+				to='/clients'
+				>
+					<h1 >
+						Hound
+					</h1>
+				</Link>
 				<Link to='/add-prospect'>
 					<button>
 						Add prospect
