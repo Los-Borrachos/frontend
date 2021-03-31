@@ -28,7 +28,7 @@ const Clients = () => {
 							<li>Sales Stage: {item.salesStage}</li>
 							<li>Total Revenue: {item.totalRevenue}</li>
 						</ul>
-						<button onClick={editShowPage}>Edit</button>
+						<button>Edit</button>
 						<button>Delete</button>
 						</container>
 						</div>
