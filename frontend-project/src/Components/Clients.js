@@ -11,6 +11,8 @@ const Clients = () => {
 			.then((res) => setClients(res.data))
 			.catch(console.error);
 	}, []);
+
+
 	
 	return (
 		<div className='clients'>
@@ -26,6 +28,8 @@ const Clients = () => {
 							<li>Sales Stage: {item.salesStage}</li>
 							<li>Total Revenue: {item.totalRevenue}</li>
 						</ul>
+						<button onClick={editShowPage}>Edit</button>
+						<button>Delete</button>
 						</container>
 						</div>
 				})}
