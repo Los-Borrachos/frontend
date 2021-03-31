@@ -9,6 +9,7 @@ const Nav = () => {
 			<nav>
 				<Link to='/'>Home</Link>
 				<Link to='/clients'>Clients</Link>
+				<Link to='/prospects'>Prospects</Link>
 			</nav>
 			<Switch>
 				<Route path='/clients'>
