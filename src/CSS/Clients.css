@@ -1,0 +1,23 @@
+.client-card {
+    width: 100vw; 
+    display: grid; 
+    grid-template-columns: .2fr 1fr 1fr 1fr .2fr;
+    border: 1px solid black;
+}
+
+.col-1 {
+    grid-column: 2;
+    text-align: left; 
+}
+
+.col-2 {
+    grid-column: 3;
+    text-align: left; 
+}
+
+.col-3 {
+    grid-column: 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
