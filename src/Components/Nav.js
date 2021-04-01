@@ -1,24 +1,23 @@
 import React from 'react';
-import { Link, Switch, Route } from 'react-router-dom';
-import Clients from './Clients.js';
-import Login from './Login.js';
+import { Link, Switch } from 'react-router-dom';
+import '../CSS/Nav.css'
 
 const Nav = () => {
 	return (
 		<div className='nav'>
-			<nav>
-				<Link to='/login'>Login</Link>
-				<Link to='/clients'>Clients</Link>
-				<Link to='/prospects'>Prospects</Link>
-			</nav>
-			<Switch>
-				<Route path='/clients'>
-					<Clients />
-				</Route>
-				<Route path='/login'>
-					<Login />
-				</Route>
-			</Switch>
+			<Link 
+			className='app-name'
+			to='/clients'
+			>
+				<h1 >
+					Hound
+				</h1>
+			</Link>
+			<Link to='/clients'>Clients</Link>
+			<Link to='/prospects'>Prospects</Link>
+			<Link to='/add-prospect'>
+				<button>Add prospect</button>
+			</Link>
 		</div>
 	);
 };

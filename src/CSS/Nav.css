@@ -1,0 +1,15 @@
+.nav {
+    display: flex; 
+    color: white; 
+    justify-content: space-evenly
+}
+
+.app-name {
+  margin-left: -10rem;
+  margin-right: 14rem;
+}
+
+.nav a {
+    color: white; 
+    text-decoration: none;
+}
