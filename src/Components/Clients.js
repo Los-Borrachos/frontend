@@ -40,9 +40,9 @@ const Clients = ({ match }) => {
 			{clients.map((item) => {
 				return (
 					<div key={item._id}>
-						<Link to={`/client/${item._id}`} className='link'>
-							<main className='client-card'>
+							<main className='client-card'>					<Link to={`/client/${item._id}`} className='link'>
 								<h3 className='col-1'>{item.name}</h3>
+								</Link>
 								<ul className='col-2'>
 									<li>Organizaion: {item.organization}</li>
 									<li>Email: {item.email}</li>
@@ -58,7 +58,6 @@ const Clients = ({ match }) => {
 							{modal ? (
 								<Modal id={item._id} closeModal={closeModal}/>
 							) : null}
-						</Link>
 					</div>
 				);
 			})}
