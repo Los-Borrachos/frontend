@@ -12,7 +12,9 @@ ul {
   align-items: center;
   background: rgb(0, 0, 0);
   color: white;
-  width: auto;
+  width: 100vw;
+  position: fixed;
+  z-index: 3;
 }
 
 .app-name {
