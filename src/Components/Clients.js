@@ -5,7 +5,7 @@ import axios from 'axios';
 import ClientModal from './ClientModal';
 import '../CSS/Clients.css';
 
-const Clients = ({ match }) => {
+const Clients = ({ match, item }) => {
 	const history = useHistory()
 	const [clients, setClients] = useState([]);
 	const [modal, setModal] = useState(false);
@@ -40,7 +40,7 @@ const Clients = ({ match }) => {
 			{clients.map((item) => {
 				return (
 					<div key={item._id}>
-							<main className='client-card'>					<Link to={`/client/${item._id}`} className='link'>
+							<main className='client-card'>					<Link to={`/clients/${item._id}`} className='link'>
 								<h3 className='col-1'>{item.name}</h3>
 								</Link>
 								<ul className='col-2'>
