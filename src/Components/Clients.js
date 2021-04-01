@@ -40,23 +40,25 @@ const Clients = ({ match }) => {
 			{clients.map((item) => {
 				return (
 					<div key={item._id}>
-						<main className='client-card'>
-							<h3 className='col-1'>{item.name}</h3>
-							<ul className='col-2'>
-								<li>Organizaion: {item.organization}</li>
-								<li>Email: {item.email}</li>
-								{/* <li>Next Steps: {item.nextSteps}</li>
-								<li>Sales Stage: {item.salesStage}</li>
-								<li>Total Revenue: {item.totalRevenue}</li> */}
-							</ul>
-							<div className='buttons col-3'>
-								<button onClick={openModal}>Edit</button>
-								<button onClick={handleDelete}>Delete</button>
-							</div>
-						</main>
-						{modal ? (
-							<Modal id={item._id} closeModal={closeModal}/>
-						) : null}
+						<Link to={`/client/${item._id}`} className='link'>
+							<main className='client-card'>
+								<h3 className='col-1'>{item.name}</h3>
+								<ul className='col-2'>
+									<li>Organizaion: {item.organization}</li>
+									<li>Email: {item.email}</li>
+									{/* <li>Next Steps: {item.nextSteps}</li>
+									<li>Sales Stage: {item.salesStage}</li>
+									<li>Total Revenue: {item.totalRevenue}</li> */}
+								</ul>
+								<div className='buttons col-3'>
+									<button onClick={openModal}>Edit</button>
+									<button onClick={handleDelete}>Delete</button>
+								</div>
+							</main>
+							{modal ? (
+								<Modal id={item._id} closeModal={closeModal}/>
+							) : null}
+						</Link>
 					</div>
 				);
 			})}

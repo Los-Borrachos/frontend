@@ -2,6 +2,7 @@ import './CSS/App.css';
 import { Route, Link } from 'react-router-dom'
 import Nav from './Components/Nav.js';
 // import Clients from './Components/Clients.js';
+import Client from './Components/Client'
 
 function App() {
 	return (
@@ -26,6 +27,10 @@ function App() {
 				</Link>
 			</nav>
 			<div>
+				<Route
+				path='/client/:clientID'
+				render={(routerProps) => <Client match={routerProps.match}/>}
+				/>
 				<Nav />
 			</div>
 		</div>
