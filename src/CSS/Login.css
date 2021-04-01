@@ -1,0 +1,14 @@
+.form {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    justify-content: space-around;
+}
+
+.form button {
+    width: 12vw;
+}
+
+.form input {
+    margin-bottom: 1rem;
+}
