@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import '../CSS/Login.css';
+import { Link } from 'react-router-dom';
+
 
 function Login() {
 	const initialState = {
@@ -9,7 +11,7 @@ function Login() {
 		password: '',
 		passwordConfirm: '',
 	};
-
+	const history = useHistory()
 	const [formState, setFormState] = useState(initialState);
 	const [valid, setValid] = useState(false);
 
@@ -28,7 +30,10 @@ function Login() {
 			.post('http://localhost:5000/users/signin', credentials, {})
 			.then((res) => {
 				if (res.status === 200) {
-					console.log('path somewhere');
+					console.log('path somewhere')
+					// history.pushState(null, 'Login');
+					history.push( '/clients');
+					// history.pop("/clients")
 				}
 			})
 			.catch((err) => {
@@ -64,7 +69,7 @@ function Login() {
 					value={formState.password}
 				/>
 
-				<button type='submit'>Sign In</button>
+				<Link></Link><button type='submit'>Sign In</button>
 				{/* {valid ? <p> match </p> : <p>Passwords must match.</p>} */}
 			</form>
 		</div>

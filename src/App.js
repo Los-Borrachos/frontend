@@ -21,6 +21,9 @@ function App() {
 						<img src={logo} alt='logo' />
 					</Link> */}
 				<div>
+					<Route path='/' exact>
+						<Login/>
+					</Route>
 					<Route path='/clients'>
 						<Clients />
 					</Route>
@@ -31,10 +34,10 @@ function App() {
 						path='/client/:clientID'
 						render={(routerProps) => <Client match={routerProps.match} />}
 					/>
-					<Route path = '/prospects'>	
+					<Route path='/prospects'>
 						<Prospects />
 					</Route>
-					<Route path = '/add-prospect'>
+					<Route path='/add-prospect'>
 						<AddProspect />
 					</Route>
 				</div>
