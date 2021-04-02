@@ -37,5 +37,19 @@
 }
 
 .nav button {
-  margin-top: 3.3em;
+  margin-top: 2.75em;
+  padding:0.5em 1.5em;
+  border:0.16em solid #FFFFFF;
+  box-sizing: border-box;
+  text-decoration:none;
+  text-transform:uppercase;
+  font-weight:400;
+  color:black;
+  text-align:center;
+  transition: all 0.15s;
+}
+
+.nav button:hover {
+  color:white;
+  background-color:black;
 }
