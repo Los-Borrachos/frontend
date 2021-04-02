@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import APIurl from '../config';
 
-const Modal = ({ id, closeModal }) => {
+const ClientModal = ({ id, closeModal }) => {
 	const history = useHistory();
 	const [client, setClient] = useState(null);
 	
@@ -62,4 +62,4 @@ const Modal = ({ id, closeModal }) => {
 		</div>
 	);
 };
-export default Modal;
+export default ClientModal;

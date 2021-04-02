@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory, Route, Link } from 'react-router-dom'
+import { useHistory, Link } from 'react-router-dom'
 import APIurl from '../config';
 import axios from 'axios';
-import Modal from './Modal';
+import ClientModal from './ClientModal';
 import '../CSS/Clients.css';
 
 const Clients = ({ match }) => {
@@ -56,7 +56,7 @@ const Clients = ({ match }) => {
 								</div>
 							</main>
 							{modal ? (
-								<Modal id={item._id} closeModal={closeModal}/>
+								<ClientModal id={item._id} closeModal={closeModal}/>
 							) : null}
 					</div>
 				);
