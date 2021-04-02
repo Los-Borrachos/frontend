@@ -6,13 +6,12 @@ import logo from '../images/Hound-logo.png';
 
 const Nav = () => {
 	return (
-		
 		<div className='nav'>
 			<Link className='app-name' to='/clients'>
 				<img src={logo} className='logo' alt='hound logo' />
 				<h1>Hound</h1>
 			</Link>
-
+			
 			<Link to='/clients' className='clients-link'>
 				Clients
 			</Link>
