@@ -2,9 +2,10 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom'
 import APIurl from '../config';
-import '../CSS/Client.css'
+import '../CSS/Client.css';
 
 const Client = ({ match }) => {
+	// console.log(match)
     const history = useHistory()
     const [client, setClient] = useState()
     const [modal, setModal] = useState(false);
@@ -54,21 +55,54 @@ const Client = ({ match }) => {
 					<div>
 						<div>
 							<h2>Edit this client:</h2>
-							<form onSubmit={handleSubmit}>
-								<label htmlFor='name' /> 
-                                Client name:
+							<form className='client-form' onSubmit={handleSubmit}>
+								<label htmlFor='name' />
+								Client name:
 								<input
 									onChange={handleChange}
 									name='name'
 									value={client.name}
 								/>
 								<label htmlFor='organization' />
-                                Organization:
+								Organization:
 								<input
 									onChange={handleChange}
 									name='organization'
 									value={client.organization}
 								/>
+								<br />
+								<label htmlFor='email' />
+								Email:
+								<input
+									onChange={handleChange}
+									name='email'
+									value={client.email}
+								/>
+								<label htmlFor='nextSteps' />
+								Next Steps:
+								<input
+									onChange={handleChange}
+									name='nextSteps'
+									value={client.nextSteps}
+								/>
+								<br />
+
+								<label htmlFor='salesStage' />
+								Sales Stage:
+								<input
+									onChange={handleChange}
+									name='salesStage'
+									value={client.salesStage}
+								/>
+
+								<label htmlFor='totalRevenue' />
+								Revenue:
+								<input 
+									onChange={handleChange}
+									type='text' 
+									name='totalRevenue' 
+									value={client.totalRevenue}/>
+
 								<br />
 								<button type='submit'>Submit</button>
 							</form>
@@ -81,6 +115,7 @@ const Client = ({ match }) => {
 				<ul>
 					<li>Email: {client.data.email}</li>
 					<li>Organization: {client.data.organization}</li>
+					<li>Next Steps: {client.data.nextSteps}</li>
 					<li>Sales Stage: {client.data.salesStage}</li>
 					<li>Revenue: ${client.data.totalRevenue}</li>
 				</ul>

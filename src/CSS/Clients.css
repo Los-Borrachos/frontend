@@ -3,6 +3,11 @@
     display: grid; 
     grid-template-columns: .2fr 1fr 1fr 1fr .2fr;
     border: 1px solid black;
+    list-style: none
+}
+
+li{
+    list-style: none;
 }
 
 .col-1 {
