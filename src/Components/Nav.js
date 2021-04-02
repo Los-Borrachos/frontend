@@ -1,23 +1,29 @@
 import React from 'react';
-import { Link, Switch, Route } from 'react-router-dom';
-import Clients from './Clients.js';
-import Home from './Home.js';
+import { Link } from 'react-router-dom';
+import '../CSS/Nav.css';
+import logo from '../images/Hound-logo.png';
+
 
 const Nav = () => {
 	return (
+		
 		<div className='nav'>
-			<nav>
-				<Link to='/'>Home</Link>
-				<Link to='/clients'>Clients</Link>
-			</nav>
-			<Switch>
-				<Route path='/clients'>
-					<Clients />
-				</Route>
-				<Route path='/'>
-					<Home />
-				</Route>
-			</Switch>
+			<Link className='app-name' to='/clients'>
+				<img src={logo} className='logo' alt='hound logo' />
+				<h1>Hound</h1>
+			</Link>
+
+			<Link to='/clients' className='clients-link'>
+				Clients
+			</Link>
+
+			<Link to='/prospects' className='prospects-link'>
+				Prospects
+			</Link>
+
+			<Link to='/add-prospect'>
+				<button>Add prospect</button>
+			</Link>
 		</div>
 	);
 };

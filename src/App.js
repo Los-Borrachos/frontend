@@ -1,33 +1,44 @@
-import './App.css';
-import { Route, Link } from 'react-router-dom'
+import './CSS/App.css';
+import { Route } from 'react-router-dom';
 import Nav from './Components/Nav.js';
-import Clients from './Components/Clients.js';
+// import Clients from './Components/Clients.js';
+import Client from './Components/Client';
+import Clients from './Components/Clients';
+import Login from './Components/Login';
+import Prospects from './Components/Prospects.js'
+import AddProspect from './Components/AddProspect.js'
 
 function App() {
 	return (
 		<div className='App'>
-			<nav className='app-nav'>
-					{/* <Link to='/'>
+			<header className='app-nav'>
+				<Nav />
+			</header>
+
+			<main className='app-body'>
+				{/* <Link to='/'>
 						{' '}
 						<img src={logo} alt='logo' />
 					</Link> */}
-				<Link 
-				className='app-name'
-				to='/clients'
-				>
-					<h1 >
-						Hound
-					</h1>
-				</Link>
-				<Link to='/add-prospect'>
-					<button>
-						Add prospect
-					</button>
-				</Link>
-			</nav>
-			<div>
-				<Nav />
-			</div>
+				<div>
+					<Route path='/clients'>
+						<Clients />
+					</Route>
+					<Route path='/login'>
+						<Login />
+					</Route>
+					<Route
+						path='/client/:clientID'
+						render={(routerProps) => <Client match={routerProps.match} />}
+					/>
+					<Route path = '/prospects'>	
+						<Prospects />
+					</Route>
+					<Route path = '/add-prospect'>
+						<AddProspect />
+					</Route>
+				</div>
+			</main>
 		</div>
 	);
 }
