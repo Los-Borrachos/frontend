@@ -13,7 +13,7 @@ function Login() {
 	};
 	const history = useHistory()
 	const [formState, setFormState] = useState(initialState);
-	const [valid, setValid] = useState(false);
+	const [valid, setValid] = useState(true);
 
 	function handleChange(event) {
 		setFormState({ ...formState, [event.target.id]: event.target.value });
@@ -35,10 +35,12 @@ function Login() {
 					history.push( '/clients');
 					// history.pop("/clients")
 				}
+				
 			})
 			.catch((err) => {
 				console.log(err);
-				console.log('alert user to retry ');
+				// alert("Bad Login, please try again");
+				setValid(false)
 			});
 
 		// const history = useHistory();
@@ -68,9 +70,10 @@ function Login() {
 					onChange={handleChange}
 					value={formState.password}
 				/>
+				
 
 				<Link></Link><button type='submit'>Sign In</button>
-				{/* {valid ? <p> match </p> : <p>Passwords must match.</p>} */}
+				{valid ? <p></p> : <p className = "bad">Bad login, try again</p>}
 			</form>
 		</div>
 	);
