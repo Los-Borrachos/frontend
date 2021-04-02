@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import APIurl from '../config';
 import axios from 'axios';
-// import ProspectModal from './ProspectModal';
 import '../CSS/Clients.css';
 
 const Clients = ({ match }) => {
