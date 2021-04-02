@@ -5,7 +5,7 @@ import APIurl from '../config';
 import '../CSS/Client.css';
 
 const Client = ({ match }) => {
-	console.log(match)
+	// console.log(match)
     const history = useHistory()
     const [client, setClient] = useState()
     const [modal, setModal] = useState(false);
@@ -15,7 +15,7 @@ const Client = ({ match }) => {
             .then((data)=> setClient(data))
             .catch(console.error)
         }, []);
-        // console.log(client)
+        console.log(client)
 
         const handleChange = (event) => {
             setClient({...client, [event.target.name]: event.target.value})
@@ -55,7 +55,7 @@ const Client = ({ match }) => {
 					<div>
 						<div>
 							<h2>Edit this client:</h2>
-							<form onSubmit={handleSubmit}>
+							<form className='client-form' onSubmit={handleSubmit}>
 								<label htmlFor='name' />
 								Client name:
 								<input
@@ -78,22 +78,30 @@ const Client = ({ match }) => {
 									name='email'
 									value={client.email}
 								/>
-								<label htmlFor='salestage' />
-								Sales Stage:
+								<label htmlFor='nextSteps' />
+								Next Steps:
 								<input
 									onChange={handleChange}
-									name='salestage'
-									value={client.salestage}
+									name='nextSteps'
+									value={client.nextSteps}
 								/>
 								<br />
 
-								<label htmlFor='' />
-								Revenue:
+								<label htmlFor='salesStage' />
+								Sales Stage:
 								<input
 									onChange={handleChange}
-									name=''
-									value={client.salestage}
+									name='salesStage'
+									value={client.salesStage}
 								/>
+
+								<label htmlFor='totalRevenue' />
+								Revenue:
+								<input 
+									onChange={handleChange}
+									type='text' 
+									name='totalRevenue' 
+									value={client.totalRevenue}/>
 
 								<br />
 								<button type='submit'>Submit</button>
