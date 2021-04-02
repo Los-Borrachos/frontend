@@ -1,5 +1,5 @@
 import './CSS/App.css';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Nav from './Components/Nav.js';
 
 import Client from './Components/Client';
@@ -16,27 +16,18 @@ function App() {
 			</header>
 
 			<main className='app-body'>
-				<div>
-					<Route path='/' exact>
-						<Login/>
-					</Route>
-					<Route path='/clients'>
-						<Clients />
+				<Switch>
+					<Route exact path='/' component={Login} />
+				
 					<Route
-						path='/clients/:clientID' exact
-						render={(routerProps) => <Client match={routerProps.match} />}
-					/>
-					</Route>
-					{/* <Route path='/login'>
-						<Login /> */}
-					{/* </Route> */}
-					<Route path='/prospects'>
-						<Prospects />
-					</Route>
-					<Route path='/add-prospect'>
-						<AddProspect />
-					</Route>
-				</div>
+						path='/clients/:clientID' component={Client}/>
+				
+					<Route path='/clients' component={Clients}/>
+				
+					<Route path='/prospects' component={Prospects}/>
+					
+					<Route path='/add-prospect' component={AddProspect}/>
+				</Switch>
 			</main>
 		</div>
 	);
