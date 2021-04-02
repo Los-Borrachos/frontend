@@ -19,10 +19,11 @@ const Nav = ({token, logout}) => {
 					<Link to='/prospects' className='prospects-link'>
 						Prospects
 					</Link>
-					<Link to='/add-prospect'>
+					{/* <Link to='/add-prospect'>
 						<button>Add prospect</button>
-					</Link>{' '}
-					<button onClick= {logout }>logout</button>
+					</Link> */}
+
+					<button className='logout-button' onClick= {logout}>logout</button>
 				</>
 			) : null}
 		</div>
