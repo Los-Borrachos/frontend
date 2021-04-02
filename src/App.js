@@ -7,6 +7,7 @@ import Clients from './Components/Clients'
 import Login from './Components/Login'
 
 function App() {
+	// added comment
 	return (
 		<div className='App'>
 			<header className='app-nav'>
