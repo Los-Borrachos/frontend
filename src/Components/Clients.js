@@ -17,13 +17,13 @@ const Clients = ({ match, item }) => {
 			.catch(console.error);
 	}, []);
 
-	const handleDelete = () => {
-		const id = match.params.id
+	// const handleDelete = () => {
+	// 	const id = match.params.id
 
-		axios.delete(`${APIurl}/clients/${id}`).then(()=> {
-			history.push('/clients')
-		}).catch(console.error)
-	} 
+	// 	axios.delete(`${APIurl}/clients/${id}`).then(()=> {
+	// 		history.push('/clients')
+	// 	}).catch(console.error)
+	// } 
 
 	const openModal = () => {
 		setModal(true);
@@ -52,7 +52,7 @@ const Clients = ({ match, item }) => {
 								</ul>
 								<div className='buttons col-3'>
 									<button onClick={openModal}>Edit</button>
-									<button onClick={handleDelete}>Delete</button>
+									{/* <button onClick={handleDelete}>Delete</button> */}
 								</div>
 							</main>
 							{modal ? (

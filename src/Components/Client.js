@@ -12,8 +12,9 @@ const Client = ({ match }) => {
         axios
             .get(`${APIurl}/clients/${match.params.clientID}`)
             .then((data)=> setClient(data))
-            console.log(client)
+            .catch(console.error)
         }, []);
+        console.log(client)
 
         const handleChange = (event) => {
             setClient({...client, [event.target.name]: event.target.value})
@@ -29,13 +30,15 @@ const Client = ({ match }) => {
 
         const handleSubmit = (event) => {
             event.preventDefault()
-            axios.put(`${APIurl}/clients/${match.params.clientID}`, client).then(()=>{
-                history.push('/')
+            axios.put(`${APIurl}/clients/${match.params.clientID}`, client)
+            .then(()=>{
+                history.push('/clients')
             }).catch(console.error)
         }
 
         const handleDelete = () => {
-            axios.delete(`${APIurl}/clients/${match.params.clientID}`).then(() => {
+            axios.delete(`${APIurl}/clients/${match.params.clientID}`)
+            .then(() => {
                 history.push('/clients')
             })
             .catch(console.error)
@@ -52,17 +55,19 @@ const Client = ({ match }) => {
 						<div>
 							<h2>Edit this client:</h2>
 							<form onSubmit={handleSubmit}>
-								<label htmlFor='name' /> Client name:
+								<label htmlFor='name' /> 
+                                Client name:
 								<input
 									onChange={handleChange}
 									name='name'
-									value={client.data.name}
+									value={client.name}
 								/>
 								<label htmlFor='organization' />
+                                Organization:
 								<input
 									onChange={handleChange}
 									name='organization'
-									value={client.data.organization}
+									value={client.organization}
 								/>
 								<br />
 								<button type='submit'>Submit</button>
@@ -71,6 +76,7 @@ const Client = ({ match }) => {
 						</div>
 					</div>
 				) : null}
+
 				<h3> Client: {client.data.name} </h3>
 				<ul>
 					<li>Email: {client.data.email}</li>
