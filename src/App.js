@@ -1,7 +1,7 @@
 import './CSS/App.css';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Nav from './Components/Nav.js';
-// import Clients from './Components/Clients.js';
+
 import Client from './Components/Client';
 import Clients from './Components/Clients';
 import Login from './Components/Login';
@@ -16,31 +16,18 @@ function App() {
 			</header>
 
 			<main className='app-body'>
-				{/* <Link to='/'>
-						{' '}
-						<img src={logo} alt='logo' />
-					</Link> */}
-				<div>
-					<Route path='/' exact>
-						<Login/>
-					</Route>
-					<Route path='/clients'>
-						<Clients />
-					</Route>
-					<Route path='/login'>
-						<Login />
-					</Route>
+				<Switch>
+					<Route exact path='/' component={Login} />
+				
 					<Route
-						path='/client/:clientID'
-						render={(routerProps) => <Client match={routerProps.match} />}
-					/>
-					<Route path='/prospects'>
-						<Prospects />
-					</Route>
-					<Route path='/add-prospect'>
-						<AddProspect />
-					</Route>
-				</div>
+						path='/clients/:clientID' component={Client}/>
+				
+					<Route path='/clients' component={Clients}/>
+				
+					<Route path='/prospects' component={Prospects}/>
+					
+					<Route path='/add-prospect' component={AddProspect}/>
+				</Switch>
 			</main>
 		</div>
 	);
