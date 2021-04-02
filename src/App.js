@@ -48,30 +48,6 @@ function App() {
 		</div>
 	);
 
-	// return (
-	// 	<div className='App'>
-	// 		<header className='app-nav'>
-	// 			<Nav />
-	// 		</header>
-
-	// 		<main className='app-body'>
-	// 			<Switch>
-	// 				<Route exact path='/' component={Login} />
-
-					// <Route
-					// 	path='/clients/:clientID' component={Client}/>
-
-					// <Route path='/prospects/:prospectID' component={Prospect}/>
-
-	// 				<Route path='/clients' component={Clients}/>
-
-	// 				<Route path='/prospects' component={Prospects}/>
-
-	// 				<Route path='/add-prospect' component={AddProspect}/>
-	// 			</Switch>
-	// 		</main>
-	// 	</div>
-	// );
 }
 
 export default App;
