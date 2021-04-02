@@ -5,7 +5,8 @@ import '../CSS/Login.css';
 import { Link } from 'react-router-dom';
 
 
-function Login() {
+function Login(props) {
+	console.log(props)
 	const initialState = {
 		username: '',
 		password: '',
@@ -31,9 +32,11 @@ function Login() {
 			.then((res) => {
 				if (res.status === 200) {
 					console.log('path somewhere')
-					// history.pushState(null, 'Login');
+					props.setToken(res.data.token)
+					localStorage.setItem("token",res.data.token)
+
 					history.push( '/clients');
-					// history.pop("/clients")
+					
 				}
 				
 			})
@@ -41,6 +44,7 @@ function Login() {
 				console.log(err);
 				// alert("Bad Login, please try again");
 				setValid(false)
+				setFormState(initialState)
 			});
 
 		// const history = useHistory();
