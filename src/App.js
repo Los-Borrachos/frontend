@@ -6,8 +6,9 @@ import React, { useState } from 'react';
 import Client from './Components/Client';
 import Clients from './Components/Clients';
 import Login from './Components/Login';
-import Prospects from './Components/Prospects.js';
-import AddProspect from './Components/AddProspect.js';
+import Prospect from './Components/Prospect'
+import Prospects from './Components/Prospects.js'
+import AddProspect from './Components/AddProspect.js'
 
 function App() {
 	const [token, setToken] = useState('');
@@ -47,6 +48,15 @@ function logout(){
 						path='*'
 						render={(props) => <Login {...props} setToken={setToken} />}
 					/>
+						<Route path='/clients/:clientID' component={Client}/>
+
+					<Route path='/prospects/:prospectID' component={Prospect}/>
+				
+					<Route path='/clients' component={Clients}/>
+				
+					<Route path='/prospects' component={Prospects}/>
+					
+					<Route path='/add-prospect' component={AddProspect}/>
 				</Switch>
 			</main>
 		</div>

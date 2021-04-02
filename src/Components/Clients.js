@@ -4,7 +4,7 @@ import APIurl from '../config';
 import axios from 'axios';
 import '../CSS/Clients.css';
 
-const Clients = ({ match, item }) => {
+const Clients = ({ match }) => {
 	const [clients, setClients] = useState([]);
 
 	useEffect(() => {
@@ -17,7 +17,6 @@ const Clients = ({ match, item }) => {
 	return (
 		<div>
 			<h3>Current Clients</h3>
-			<button>Edit</button>
 			{clients.map((item) => {
 				return (
 					<div key={item._id}>
