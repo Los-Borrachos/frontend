@@ -1,5 +1,23 @@
-label {
+.add-prospect-label {
 	display: inline-block;
-	width: 100px;
+	width: 140px;
 	text-align: right;
+}
+
+.add-prospect-input {
+	margin: 3px auto 3px 2px;
+}
+
+.create-prospect {
+	width: 600px;
+	margin: 0 auto;
+	padding-top: 15px;
+}
+
+.add-prospect-button {
+    margin-top: 10px;
+}
+
+#submit{
+    margin-right: 5px;
 }

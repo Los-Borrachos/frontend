@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import APIurl from '../config';
 import axios from 'axios';
 import '../CSS/AddProspect.css';
@@ -35,50 +35,60 @@ const AddProspect = () => {
 	return (
 		<div>
 			<h2>Add prospect:</h2>
-			<form className='prospect-form' onSubmit={handleSubmit}>
-				<label htmlFor='name' className='prospect-label' />
-				prospect name:
-				<input onChange={handleChange} name='name' value={prospect.name} />
-				<label htmlFor='organization' className='prospect-label' />
-				Organization:
+			<form onSubmit={handleSubmit} className='create-prospect'>
+				<label className='add-prospect-label'>Name: </label>
+				<input
+					onChange={handleChange}
+					name='name'
+					placeholder='Name'
+					value={prospect.name}
+					className='add-prospect-input'
+				/>
+				<label className='add-prospect-label'>Organization: </label>
 				<input
 					onChange={handleChange}
 					name='organization'
-					value={prospect.organization}
+					placeholder='Org'
+					className='add-prospect-input'
 				/>
-				<br />
-				<label htmlFor='email' className='prospect-label' />
-				Email:
-				<input onChange={handleChange} name='email' value={prospect.email} />
-				<label htmlFor='nextSteps' className='prospect-label' />
-				Next Steps:
+				<label className='add-prospect-label'>Email: </label>
+				<input
+					onChange={handleChange}
+					name='email'
+					placeholder='Email'
+					className='add-prospect-input'
+				/>
+				<label className='add-prospect-label'>Next Steps: </label>
 				<input
 					onChange={handleChange}
 					name='nextSteps'
-					value={prospect.nextSteps}
+					placeholder='Step'
+					className='add-prospect-input'
 				/>
-				<br />
-				<label htmlFor='salesStage' className='prospect-label' />
-				Sales Stage:
+				<label className='add-prospect-label'>Sales Stage: </label>
 				<input
 					onChange={handleChange}
 					name='salesStage'
-					value={prospect.salesStage}
+					placeholder='Stage'
+					className='add-prospect-input'
 				/>
-				<label htmlFor='totalRevenue' className='prospect-label' />
-				Revenue:
+				<label className='add-prospect-label'>Total Revenue: </label>
 				<input
+					type='number'
 					onChange={handleChange}
-					type='text'
 					name='totalRevenue'
-					value={prospect.totalRevenue}
+					placeholder='Revenue'
+					className='add-prospect-input'
 				/>
-				<br />
-				<button type='submit' id='submit'>
-					Submit
-				</button>
+				<input
+					id='submit'
+					type='submit'
+					value='Submit'
+					className='add-prospect-button'></input>
+				<Link to='/prospects'>
+					<button className='add-prospect-button'>Close</button>
+				</Link>
 			</form>
-			<button id='close'>Close</button>
 		</div>
 	);
 };

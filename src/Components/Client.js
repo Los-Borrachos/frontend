@@ -2,7 +2,6 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom'
 import APIurl from '../config';
-import '../CSS/Client.css';
 
 const Client = ({ match }) => {
 	// console.log(match)
