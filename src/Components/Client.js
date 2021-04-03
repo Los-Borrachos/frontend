@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom'
+import { useHistory, Link } from 'react-router-dom'
 import APIurl from '../config';
 
 const Client = ({ match }) => {
@@ -85,7 +85,6 @@ const Client = ({ match }) => {
 									value={client.nextSteps}
 								/>
 								<br />
-
 								<label htmlFor='salesStage' />
 								Sales Stage:
 								<input
@@ -93,15 +92,14 @@ const Client = ({ match }) => {
 									name='salesStage'
 									value={client.salesStage}
 								/>
-
 								<label htmlFor='totalRevenue' />
 								Revenue:
-								<input 
+								<input
 									onChange={handleChange}
-									type='text' 
-									name='totalRevenue' 
-									value={client.totalRevenue}/>
-
+									type='text'
+									name='totalRevenue'
+									value={client.totalRevenue}
+								/>
 								<br />
 								<button type='submit'>Submit</button>
 							</form>
@@ -120,6 +118,9 @@ const Client = ({ match }) => {
 				</ul>
 				<button onClick={editShowPage}>Edit</button>
 				<button onClick={handleDelete}>Delete</button>
+				<Link to='/clients'>
+					<button>Back</button>
+				</Link>
 			</div>
 		);
 };

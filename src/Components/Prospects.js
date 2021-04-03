@@ -34,7 +34,9 @@ const Clients = ({ match }) => {
 								<li>Email: {item.email}</li>
 							</ul>
 							<div className='buttons col-3'>
-								<button>Edit</button>
+								<Link to={`/prospects/${item._id}`}>
+									<button>Edit</button>
+								</Link>
 							</div>
 						</main>
 					</div>
