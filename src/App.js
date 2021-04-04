@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import Nav from './Components/Nav.js';
 import React, { useState } from 'react';
 
+import Home from './Components/Home'
 import Client from './Components/Client';
 import Clients from './Components/Clients';
 import Login from './Components/Login';
@@ -25,6 +26,7 @@ function App() {
 			<main className='app-body'>
 				<Switch>
 					<Route path='/users/signup' component={SignUp} />
+					<Route exact path='/' component={Home} />
 					{!token ? (
 						<Route
 							exact
