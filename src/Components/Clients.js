@@ -4,7 +4,7 @@ import APIurl from '../config';
 import axios from 'axios';
 import '../CSS/Clients.css';
 
-const Clients = ({ match }) => {
+const Clients = () => {
 	const [clients, setClients] = useState([]);
 
 	useEffect(() => {
@@ -28,19 +28,18 @@ const Clients = ({ match }) => {
 								<img
 									className='images'
 									src={item.image}
-									onerror="this.onerror=null; this.src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'"
 									alt=''
 								/>
 								<h3 className=''>{item.name}</h3>
 							</Link>
 							<ul className='col-2'>
-								<li>Organizaion: {item.organization}</li>
+								<li>Organization: {item.organization}</li>
 								<li>Phone: {item.phoneNumber}</li>
 								<li>Email: {item.email}</li>
 							</ul>
 							<div className='buttons col-3'>
 								<Link to={`/clients/${item._id}`}>
-									<button class='edit'>Edit</button>
+									<button className='edit'>Edit</button>
 								</Link>
 							</div>
 						</main>

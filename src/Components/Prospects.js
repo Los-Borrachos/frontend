@@ -5,7 +5,7 @@ import axios from 'axios';
 import '../CSS/Clients.css';
 
 const Clients = ({ match }) => {
-	console.log(match)
+	
 	const [prospects, setProspects] = useState([]);
 
 	useEffect(() => {
@@ -30,7 +30,7 @@ const Clients = ({ match }) => {
 						<main className='client-card'>
 							{' '}
 							<Link to={`/prospects/${item._id}`} className='link col-1'>
-								<img className = "images" src = {item.image} alt = "profile-image"/>
+								<img className = "images" src = {item.image} alt = "profile"/>
 								<h3 className=''>{item.name}</h3>
 							</Link>
 							<ul className='col-2'>

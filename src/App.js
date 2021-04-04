@@ -3,13 +3,14 @@ import { Route, Switch } from 'react-router-dom';
 import Nav from './Components/Nav.js';
 import React, { useState } from 'react';
 
+import Home from './Components/Home'
 import Client from './Components/Client';
 import Clients from './Components/Clients';
 import Login from './Components/Login';
 import Prospect from './Components/Prospect'
 import Prospects from './Components/Prospects.js';
 import AddProspect from './Components/AddProspect.js';
-
+import SignUp from "./Components/SignUp"
 function App() {
 	const [token, setToken] = useState('');
 	function logout() {
@@ -24,6 +25,8 @@ function App() {
 			</header>
 			<main className='app-body'>
 				<Switch>
+					<Route path='/signup' component={SignUp} />
+					<Route exact path='/' component={Home} />
 					{!token ? (
 						<Route
 							exact

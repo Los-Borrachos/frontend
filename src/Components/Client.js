@@ -14,8 +14,8 @@ const Client = ({ match }) => {
 			.get(`${APIurl}/clients/${match.params.clientID}`)
 			.then((data) => setClient(data))
 			.catch(console.error);
-	}, []);
-	console.log(client);
+	},);
+	
 
 	const handleChange = (event) => {
 		setClient({ ...client, [event.target.name]: event.target.value });
@@ -152,6 +152,7 @@ const Client = ({ match }) => {
 				</div>
 			) : null}
 
+
 			<div className='profile'>
 				<header className='profile-header'>
 				<h3>Client: {client.data.name}</h3>
@@ -182,6 +183,7 @@ const Client = ({ match }) => {
 						</Link>
 					</div>
 				</div>
+
 			</div>
 		</div>
 	);

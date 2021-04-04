@@ -13,8 +13,8 @@ const Prospect = ({ match }) => {
 			.get(`${APIurl}/prospects/${match.params.prospectID}`)
 			.then((data) => setProspect(data))
 			.catch(console.error);
-	}, []);
-	console.log(prospect);
+	}, );
+	
 
 	const handleChange = (event) => {
 		setProspect({ ...prospect, [event.target.name]: event.target.value });
@@ -159,6 +159,7 @@ const Prospect = ({ match }) => {
 				<li>Next Steps: {prospect.data.nextSteps}</li>
 				<li>Sales Stage: {prospect.data.salesStage}</li>
 				<li>Revenue: ${prospect.data.totalRevenue}</li>
+
 			</ul>
 
 			<div className='profile-buttons client-page'>
