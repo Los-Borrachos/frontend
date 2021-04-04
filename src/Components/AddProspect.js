@@ -9,6 +9,7 @@ const AddProspect = () => {
 		name: '',
 		organization: '',
 		email: '',
+		phoneNumber: '',
 		nextSteps: '',
 		salesStage: '',
 		totalRevenue: 0,
@@ -56,6 +57,13 @@ const AddProspect = () => {
 					onChange={handleChange}
 					name='email'
 					placeholder='Email'
+					className='add-prospect-input'
+				/>
+				<label className='add-prospect-label'>Phone: </label>
+				<input
+					onChange={handleChange}
+					name='phoneNumber'
+					placeholder='Phone'
 					className='add-prospect-input'
 				/>
 				<label className='add-prospect-label'>Next Steps: </label>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import APIurl from '../config';
 import axios from 'axios';
 import '../CSS/Clients.css';
@@ -39,18 +39,15 @@ const Clients = ({ match }) => {
 							</Link>
 							<ul className='col-2'>
 								<li>Organizaion: {item.organization}</li>
+								<li>Phone: {item.phoneNumber}</li>
 								<li>Email: {item.email}</li>
 							</ul>
 							<div className='buttons col-3'>
 								<Link to={`/clients/${item._id}`}>
 									<button class='edit'>Edit</button>
 								</Link>
-								{/* <button onClick={handleDelete}>Delete</button> */}
 							</div>
 						</main>
-						{/* {modal ? (
-								<ClientModal id={item._id} closeModal={closeModal}/>
-							) : null} */}
 					</div>
 				);
 			})}

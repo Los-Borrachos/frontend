@@ -53,7 +53,7 @@ const Prospect = ({ match }) => {
     }
 
 	if (!prospect) {
-		return <h1>loading...</h1>;
+		return <h2>loading...</h2>;
 	}
 
 	return (
@@ -68,6 +68,7 @@ const Prospect = ({ match }) => {
 							<input
 								onChange={handleChange}
 								name='name'
+								placeholder='Name'
 								value={prospect.name}
 							/>
 							<label htmlFor='organization' />
@@ -75,6 +76,7 @@ const Prospect = ({ match }) => {
 							<input
 								onChange={handleChange}
 								name='organization'
+								placeholder='Org'
 								value={prospect.organization}
 							/>
 							<br />
@@ -83,29 +85,42 @@ const Prospect = ({ match }) => {
 							<input
 								onChange={handleChange}
 								name='email'
+								placeholder='Email'
 								value={prospect.email}
 							/>
+							<label htmlFor='email' />
+							Phone:
+							<input
+								onChange={handleChange}
+								name='phoneNumber'
+								placeholder='Phone'
+								value={prospect.phoneNumber}
+							/>
+							<br />
 							<label htmlFor='nextSteps' />
 							Next Steps:
 							<input
 								onChange={handleChange}
 								name='nextSteps'
+								placeholder='Step'
 								value={prospect.nextSteps}
 							/>
-							<br />
 							<label htmlFor='salesStage' />
 							Sales Stage:
 							<input
 								onChange={handleChange}
 								name='salesStage'
+								placeholder='Stage'
 								value={prospect.salesStage}
 							/>
+							<br />
 							<label htmlFor='totalRevenue' />
 							Revenue:
 							<input
 								onChange={handleChange}
-								type='text'
+								type='number'
 								name='totalRevenue'
+								placeholder='Revenue'
 								value={prospect.totalRevenue}
 							/>
 							<br />
@@ -118,8 +133,8 @@ const Prospect = ({ match }) => {
 							/>
 							<br />
 							<button type='submit'>Submit</button>
+							<button onClick={closeModal}>Close</button>
 						</form>
-						<button onClick={closeModal}>Close</button>
 					</div>
 				</div>
 			) : null}
@@ -127,6 +142,7 @@ const Prospect = ({ match }) => {
 			<h3> Prospect: {prospect.data.name} </h3>
 			<ul>
 				<li>Email: {prospect.data.email}</li>
+				<li>Phone: {prospect.data.phoneNumber}</li>
 				<li>Organization: {prospect.data.organization}</li>
 				<li>Next Steps: {prospect.data.nextSteps}</li>
 				<li>Sales Stage: {prospect.data.salesStage}</li>

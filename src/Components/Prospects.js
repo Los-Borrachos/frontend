@@ -35,6 +35,7 @@ const Clients = ({ match }) => {
 							</Link>
 							<ul className='col-2'>
 								<li>Organizaion: {item.organization}</li>
+								<li>Phone: {item.phoneNumber}</li>
 								<li>Email: {item.email}</li>
 							</ul>
 							<div className='buttons col-3'>
