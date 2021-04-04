@@ -9,7 +9,7 @@ import Login from './Components/Login';
 import Prospect from './Components/Prospect'
 import Prospects from './Components/Prospects.js';
 import AddProspect from './Components/AddProspect.js';
-
+import SignUp from "./Components/SignUp"
 function App() {
 	const [token, setToken] = useState('');
 	function logout() {
@@ -24,6 +24,7 @@ function App() {
 			</header>
 			<main className='app-body'>
 				<Switch>
+					<Route path='/users/signup' component={SignUp} />
 					{!token ? (
 						<Route
 							exact

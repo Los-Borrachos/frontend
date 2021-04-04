@@ -2,25 +2,15 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../CSS/Login.css'
 
+import { useHistory } from 'react-router-dom';
 
 
 
 
 
-
-function Login () {
-	 const [login, setLogin] = useState(null);
-	 let user = "test"
-	 let pass = "test"
-	useEffect(() => {
-		// POST request using axios inside useEffect React hook
-		const credentials  = { userName: {user}, password: {pass} };
-		axios
-			.post('http://localhost:5000/users/signin', credentials)
-			.then((response) => setLogin(response.data.id));
-
-		// empty dependency array means this effect will only run once (like componentDidMount in classes)
-	}, []);
+function SignUp () {
+	
+	
 
 	const initialState = { 
 		username: '',
@@ -30,15 +20,43 @@ function Login () {
 
 	const [formState, setFormState] = useState(initialState);
 	const [valid, setValid] = useState(false);
-
+	const history = useHistory();
 	function handleChange (event) {
 		setFormState({...formState, [event.target.id]: event.target.value})
   	}
 
 	function handleSubmit (event) {
 		event.preventDefault(); 
+		const credentials = {
+			userName: formState.username,
+			password: formState.password,
+		};
+		axios
+			.post('http://localhost:5000/users/signup', credentials)
+			.then((res) => {
+				if (formState.password === formState.passwordConfirm) {
+					if (res.status === 201) {
+						console.log('path somewhere signup');
+
+						history.push('/signin');
+					}
+					setValid(true);
+				} else {
+					setValid(false);
+				}
+				
+			})
+			.catch((err) => {
+				console.log(err);
+				// alert("Bad Login, please try again");
+				setValid(false);
+				setFormState(initialState);
+			});
+
 		if (formState.password === formState.passwordConfirm){
 			setValid(true);
+			
+
 		} else {
 			setValid(false);
 		}
@@ -86,4 +104,4 @@ function Login () {
 		</div>
 	);
 };
-export default Login;
+export default SignUp;
