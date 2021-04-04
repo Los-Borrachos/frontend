@@ -30,10 +30,14 @@ li{
 
 .page-header {
     text-align: left;
-    margin-left: 10px;
     display: flex; 
     flex-direction: row;
     justify-content: space-between;
+    border-bottom: 3px solid black;
+}
+
+.header-text {
+    margin-left: 10px;
 }
 
 .header-button {

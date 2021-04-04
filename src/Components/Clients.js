@@ -18,7 +18,7 @@ const Clients = ({ match }) => {
 		<div>
 
 			<header className='page-header'>
-				<h1>Clients</h1>
+				<h1 className='header-text'>Clients</h1>
 				<Link to='/add-client'>
 					<button className='header-button'>Add Client</button>
 				</Link>
