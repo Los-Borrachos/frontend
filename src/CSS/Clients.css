@@ -90,4 +90,5 @@ li{
 .images{
    width: 5vw; 
    height: 5vh;
+   border-radius: 50%;
 }
