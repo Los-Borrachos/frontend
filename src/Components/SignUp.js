@@ -4,13 +4,7 @@ import '../CSS/Login.css'
 
 import { useHistory } from 'react-router-dom';
 
-
-
-
-
 function SignUp () {
-	
-	
 
 	const initialState = { 
 		username: '',
@@ -36,8 +30,6 @@ function SignUp () {
 			.then((res) => {
 				if (formState.password === formState.passwordConfirm) {
 					if (res.status === 201) {
-						console.log('path somewhere signup');
-
 						history.push('/signin');
 					}
 					setValid(true);
@@ -47,8 +39,6 @@ function SignUp () {
 				
 			})
 			.catch((err) => {
-				console.log(err);
-				// alert("Bad Login, please try again");
 				setValid(false);
 				setFormState(initialState);
 			});
