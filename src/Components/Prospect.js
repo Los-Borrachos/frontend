@@ -123,7 +123,7 @@ const Prospect = ({ match }) => {
 			<button onClick={editShowPage}>Edit</button>
 			<button onClick={handleDelete}>Delete</button>
             <button onClick={transferClient}>Transfer to Client</button>
-			<Link to='/prospects'><button>Back</button></Link>
+			<Link to='/prospects'><button>Return</button></Link>
 		</div>
 	);
 };

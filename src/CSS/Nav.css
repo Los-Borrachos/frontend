@@ -55,4 +55,5 @@
 .nav button:hover {
   color:black;
   background-color:white;
+  cursor: pointer;
 }

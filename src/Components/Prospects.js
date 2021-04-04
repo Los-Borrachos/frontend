@@ -17,10 +17,13 @@ const Clients = ({ match }) => {
 
 	return (
 		<div>
-			<h3>Current Prospects</h3>
-			<Link to='/add-prospect'>
-				<button>Add prospect</button>
-			</Link>
+			<header className='page-header'>
+				<h1>Prospects</h1>
+				<Link to='/add-prospect'>
+					<button className='header-button'>Add prospect</button>
+				</Link>
+			</header>
+
 			{prospects.map((item) => {
 				return (
 					<div key={item._id}>
@@ -35,7 +38,7 @@ const Clients = ({ match }) => {
 							</ul>
 							<div className='buttons col-3'>
 								<Link to={`/prospects/${item._id}`}>
-									<button>Edit</button>
+									<button className='edit'>Edit</button>
 								</Link>
 							</div>
 						</main>

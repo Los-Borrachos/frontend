@@ -1,7 +1,7 @@
 .client-card {
     width: 100vw; 
     display: grid; 
-    grid-template-columns: .2fr 1fr 1fr 1fr .2fr;
+    grid-template-columns: 2.5fr .2fr 3fr 3fr .1fr;
     border: 1px solid black;
     list-style: none
 }
@@ -13,6 +13,7 @@ li{
 .col-1 {
     grid-column: 2;
     text-align: left; 
+    margin-left: 5px; 
 }
 
 .col-2 {
@@ -25,4 +26,60 @@ li{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.page-header {
+    text-align: left;
+    margin-left: 10px;
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.header-button {
+    margin-top: 1.5em;
+    margin-right: 3em;
+
+    background-color: white;
+    box-sizing: border-box;
+    text-decoration:none;
+    text-transform:uppercase;
+    font-weight:400;
+    color:black;
+    text-align:center;
+    transition: all 0.25s;
+    font-size: 16px;
+    width: 160px; 
+    height: 40px;
+}
+
+.page-header button:hover {
+  color:white;
+  background-color:black;
+  cursor: pointer;
+}
+
+.edit{
+    margin-left: 11em;
+    display:inline-block;
+    padding:0.7em 1.4em;
+    border-radius:0.15em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    text-transform:uppercase;
+    font-weight:100;
+    color:#FFFFFF;
+    background-color:#7494eb;
+    box-shadow:inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);
+    text-align:center;
+    position:relative;
+}
+
+.edit:hover {
+    cursor: pointer;
+}
+
+.edit:active{
+    top:0.1em;
 }

@@ -16,7 +16,14 @@ const Clients = ({ match }) => {
 
 	return (
 		<div>
-			<h3>Current Clients</h3>
+
+			<header className='page-header'>
+				<h1>Clients</h1>
+				<Link to='/add-client'>
+					<button className='header-button'>Add Client</button>
+				</Link>
+			</header>
+
 			{clients.map((item) => {
 				return (
 					<div key={item._id}>
@@ -27,13 +34,10 @@ const Clients = ({ match }) => {
 							<ul className='col-2'>
 								<li>Organizaion: {item.organization}</li>
 								<li>Email: {item.email}</li>
-								{/* <li>Next Steps: {item.nextSteps}</li>
-									<li>Sales Stage: {item.salesStage}</li>
-									<li>Total Revenue: {item.totalRevenue}</li> */}
 							</ul>
 							<div className='buttons col-3'>
 								<Link to={`/clients/${item._id}`}>
-									<button>Edit</button>
+									<button class='edit'>Edit</button>
 								</Link>
 								{/* <button onClick={handleDelete}>Delete</button> */}
 							</div>
