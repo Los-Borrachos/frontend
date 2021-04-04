@@ -9,6 +9,7 @@ const AddProspect = () => {
 		name: '',
 		organization: '',
 		email: '',
+		phoneNumber: '',
 		nextSteps: '',
 		salesStage: '',
 		totalRevenue: 0,
@@ -58,6 +59,13 @@ const AddProspect = () => {
 					placeholder='Email'
 					className='add-prospect-input'
 				/>
+				<label className='add-prospect-label'>Phone: </label>
+				<input
+					onChange={handleChange}
+					name='phoneNumber'
+					placeholder='Phone'
+					className='add-prospect-input'
+				/>
 				<label className='add-prospect-label'>Next Steps: </label>
 				<input
 					onChange={handleChange}
@@ -78,6 +86,14 @@ const AddProspect = () => {
 					onChange={handleChange}
 					name='totalRevenue'
 					placeholder='Revenue'
+					className='add-prospect-input'
+				/>
+				<label className='add-prospect-label'>Image Link: </label>
+				<input
+					
+					onChange={handleChange}
+					name='image'
+					placeholder='image link'
 					className='add-prospect-input'
 				/>
 				<input

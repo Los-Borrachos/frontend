@@ -11,9 +11,12 @@ li{
 }
 
 .col-1 {
-    grid-column: 2;
+    display: flex;
+    grid-column: 1;
     text-align: left; 
     margin-left: 5px; 
+    margin-top: 10px; 
+    margin-bottom: 10px;
 }
 
 .col-2 {
@@ -86,4 +89,12 @@ li{
 
 .edit:active{
     top:0.1em;
+}
+.images{
+    object-fit: cover;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 5px;
+    border: 1.5px solid black;
 }

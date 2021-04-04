@@ -18,7 +18,7 @@ const Clients = ({ match }) => {
 	return (
 		<div>
 			<header className='page-header'>
-				<h1>Prospects</h1>
+				<h1 className='header-text'>Prospects</h1>
 				<Link to='/add-prospect'>
 					<button className='header-button'>Add prospect</button>
 				</Link>
@@ -29,11 +29,13 @@ const Clients = ({ match }) => {
 					<div key={item._id}>
 						<main className='client-card'>
 							{' '}
-							<Link to={`/prospects/${item._id}`} className='link'>
-								<h3 className='col-1'>{item.name}</h3>
+							<Link to={`/prospects/${item._id}`} className='link col-1'>
+								<img className = "images" src = {item.image} alt = "profile-image"/>
+								<h3 className=''>{item.name}</h3>
 							</Link>
 							<ul className='col-2'>
 								<li>Organizaion: {item.organization}</li>
+								<li>Phone: {item.phoneNumber}</li>
 								<li>Email: {item.email}</li>
 							</ul>
 							<div className='buttons col-3'>
