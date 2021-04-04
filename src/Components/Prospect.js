@@ -65,7 +65,11 @@ const Prospect = ({ match }) => {
 						<form className='prospect-form' onSubmit={handleSubmit}>
 							<label htmlFor='name' />
 							Prospect name:
-							<input onChange={handleChange} name='name' value={prospect.name} />
+							<input
+								onChange={handleChange}
+								name='name'
+								value={prospect.name}
+							/>
 							<label htmlFor='organization' />
 							Organization:
 							<input
@@ -105,6 +109,14 @@ const Prospect = ({ match }) => {
 								value={prospect.totalRevenue}
 							/>
 							<br />
+							Image
+							<input
+								onChange={handleChange}
+								type='text'
+								name='image'
+								value={prospect.image}
+							/>
+							<br />
 							<button type='submit'>Submit</button>
 						</form>
 						<button onClick={closeModal}>Close</button>
@@ -119,11 +131,20 @@ const Prospect = ({ match }) => {
 				<li>Next Steps: {prospect.data.nextSteps}</li>
 				<li>Sales Stage: {prospect.data.salesStage}</li>
 				<li>Revenue: ${prospect.data.totalRevenue}</li>
+				<li>Picture Link: {prospect.data.image}</li>
+				<img
+					className='images'
+					src={prospect.data.image}
+					onerror="this.onerror=null; this.src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'"
+					alt=''
+				/>
 			</ul>
 			<button onClick={editShowPage}>Edit</button>
 			<button onClick={handleDelete}>Delete</button>
-            <button onClick={transferClient}>Transfer to Client</button>
-			<Link to='/prospects'><button>Return</button></Link>
+			<button onClick={transferClient}>Transfer to Client</button>
+			<Link to='/prospects'>
+				<button>Return</button>
+			</Link>
 		</div>
 	);
 };

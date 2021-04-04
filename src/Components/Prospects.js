@@ -31,6 +31,7 @@ const Clients = ({ match }) => {
 							{' '}
 							<Link to={`/prospects/${item._id}`} className='link'>
 								<h3 className='col-1'>{item.name}</h3>
+								<img className = "images" src = {item.image} alt = "profile-image"/>
 							</Link>
 							<ul className='col-2'>
 								<li>Organizaion: {item.organization}</li>

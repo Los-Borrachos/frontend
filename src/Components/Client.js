@@ -100,6 +100,14 @@ const Client = ({ match }) => {
 									name='totalRevenue'
 									value={client.totalRevenue}
 								/>
+								Image
+								<input
+									onChange={handleChange}
+									type='text'
+									name='image'
+									value={client.image}
+								/>
+								<br />
 								<br />
 								<button type='submit'>Submit</button>
 							</form>
@@ -115,6 +123,12 @@ const Client = ({ match }) => {
 					<li>Next Steps: {client.data.nextSteps}</li>
 					<li>Sales Stage: {client.data.salesStage}</li>
 					<li>Revenue: ${client.data.totalRevenue}</li>
+					<img
+						className='images'
+						src={client.data.image}
+						onerror="this.onerror=null; this.src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'"
+						alt=''
+					/>
 				</ul>
 				<button onClick={editShowPage}>Edit</button>
 				<button onClick={handleDelete}>Delete</button>

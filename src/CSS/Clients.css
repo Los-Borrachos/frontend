@@ -87,3 +87,7 @@ li{
 .edit:active{
     top:0.1em;
 }
+.images{
+   width: 5vw; 
+   height: 5vh;
+}

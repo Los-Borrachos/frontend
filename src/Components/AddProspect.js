@@ -80,6 +80,14 @@ const AddProspect = () => {
 					placeholder='Revenue'
 					className='add-prospect-input'
 				/>
+				<label className='add-prospect-label'>Image Link: </label>
+				<input
+					
+					onChange={handleChange}
+					name='image'
+					placeholder='image link'
+					className='add-prospect-input'
+				/>
 				<input
 					id='submit'
 					type='submit'
