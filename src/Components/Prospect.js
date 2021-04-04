@@ -139,7 +139,18 @@ const Prospect = ({ match }) => {
 				</div>
 			) : null}
 
-			<h3> Prospect: {prospect.data.name} </h3>
+		<div className='profile'>
+			<header className='profile-header'>
+			<h3>Prospect: {prospect.data.name}</h3>
+				<img
+					className='images'
+					src={prospect.data.image}
+					onerror="this.onerror=null; this.src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'"
+					alt=''
+				/>
+			</header>
+
+			<div className='info-container'>
 			<ul>
 				<li>Email: {prospect.data.email}</li>
 				<li>Phone: {prospect.data.phoneNumber}</li>
@@ -147,20 +158,18 @@ const Prospect = ({ match }) => {
 				<li>Next Steps: {prospect.data.nextSteps}</li>
 				<li>Sales Stage: {prospect.data.salesStage}</li>
 				<li>Revenue: ${prospect.data.totalRevenue}</li>
-				<li>Picture Link: {prospect.data.image}</li>
-				<img
-					className='images'
-					src={prospect.data.image}
-					onerror="this.onerror=null; this.src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'"
-					alt=''
-				/>
 			</ul>
+
+			<div className='profile-buttons'>
 			<button onClick={editShowPage}>Edit</button>
 			<button onClick={handleDelete}>Delete</button>
 			<button onClick={transferClient}>Transfer to Client</button>
 			<Link to='/prospects'>
 				<button>Return</button>
 			</Link>
+			</div>
+			</div>
+		</div>
 		</div>
 	);
 };

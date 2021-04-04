@@ -1,0 +1,46 @@
+.profile {
+    display: grid; 
+    grid-template-columns: 4fr 3fr 4fr;
+    grid-template-rows: 1fr 5fr 1fr;
+}
+
+.profile-header{
+    grid-row: 1;
+    grid-column: 2;
+}
+
+.info-container {
+    text-align: left;
+    grid-row: 2;
+    grid-column: 2;
+}
+
+.profile-buttons {
+    grid-column: 2;
+    grid-row: 3;
+    display: flex;
+    flex-direction: row;
+}
+
+.profile button{
+    margin: 4px;
+    padding:0.7em 1.4em;
+    border-radius:0.15em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    text-transform:uppercase;
+    font-weight:100;
+    color:#FFFFFF;
+    background-color:#7494eb;
+    box-shadow:inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);
+    text-align:center;
+    position:relative;
+}
+
+.profile button:hover {
+    cursor: pointer;
+}
+.profile button:active{
+    top:0.1em;
+}

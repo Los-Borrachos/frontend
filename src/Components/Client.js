@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { useHistory, Link } from 'react-router-dom';
 import APIurl from '../config';
+import '../CSS/Client.css'
 
 
 const Client = ({ match }) => {
@@ -140,28 +141,36 @@ const Client = ({ match }) => {
 				</div>
 			) : null}
 
-			<h3> Client: {client.data.name} </h3>
-			<div className='name-container'>
-				<ul>
-					<li>Email: {client.data.email}</li>
-					<li>Phone: {client.data.phoneNumber}</li>
-					<li>Organization: {client.data.organization}</li>
-					<li>Next Steps: {client.data.nextSteps}</li>
-					<li>Sales Stage: {client.data.salesStage}</li>
-					<li>Revenue: ${client.data.totalRevenue}</li>
-					<img
-						className='images'
-						src={client.data.image}
-						onerror="this.onerror=null; this.src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'"
-						alt=''
-					/>
-				</ul>
-				<button onClick={editShowPage}>Edit</button>
-				<button onClick={handleDelete}>Delete</button>
-				<br />
-				<Link to='/clients'>
-					<button>Back</button>
-				</Link>
+			<div className='profile'>
+				<header className='profile-header'>
+				<h3>Client: {client.data.name}</h3>
+						<img
+							className='images'
+							src={client.data.image}
+							onerror="this.onerror=null; this.src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'"
+							alt={client.data.name}
+						/>
+				</header>
+
+				<div className='info-container'>
+					<ul>
+						<li>Email: {client.data.email}</li>
+						<li>Phone: {client.data.phoneNumber}</li>
+						<li>Organization: {client.data.organization}</li>
+						<li>Next Steps: {client.data.nextSteps}</li>
+						<li>Sales Stage: {client.data.salesStage}</li>
+						<li>Revenue: ${client.data.totalRevenue}</li>
+					</ul>
+
+					<div className='profile-buttons'>
+						<button onClick={editShowPage}>Edit</button>
+						<button onClick={handleDelete}>Delete</button>
+						<br />
+						<Link to='/clients'>
+							<button>Return</button>
+						</Link>
+					</div>
+				</div>
 			</div>
 		</div>
 	);
