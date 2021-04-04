@@ -28,14 +28,14 @@ const Clients = ({ match }) => {
 				return (
 					<div key={item._id}>
 						<main className='client-card'>
-							<Link to={`/clients/${item._id}`} className='link'>
-								<h3 className='col-1'>{item.name}</h3>
+							<Link to={`/clients/${item._id}`} className='link col-1'>
 								<img
 									className='images'
 									src={item.image}
 									onerror="this.onerror=null; this.src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'"
 									alt=''
 								/>
+								<h3 className=''>{item.name}</h3>
 							</Link>
 							<ul className='col-2'>
 								<li>Organizaion: {item.organization}</li>
