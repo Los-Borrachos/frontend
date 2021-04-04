@@ -25,7 +25,7 @@ function App() {
 			</header>
 			<main className='app-body'>
 				<Switch>
-					<Route path='/users/signup' component={SignUp} />
+					<Route path='/signup' component={SignUp} />
 					<Route exact path='/' component={Home} />
 					{!token ? (
 						<Route
