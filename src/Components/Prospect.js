@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { useHistory, Link } from 'react-router-dom';
 import APIurl from '../config';
+import '../CSS/Client.css'
 
 const Prospect = ({ match }) => {
 	const history = useHistory();
@@ -160,7 +161,7 @@ const Prospect = ({ match }) => {
 				<li>Revenue: ${prospect.data.totalRevenue}</li>
 			</ul>
 
-			<div className='profile-buttons'>
+			<div className='profile-buttons client-page'>
 			<button onClick={editShowPage}>Edit</button>
 			<button onClick={handleDelete}>Delete</button>
 			<button onClick={transferClient}>Transfer to Client</button>

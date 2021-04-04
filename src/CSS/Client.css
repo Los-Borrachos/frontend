@@ -22,7 +22,7 @@
     flex-direction: row;
 }
 
-.profile button{
+.client-page button{
     margin: 4px;
     padding:0.7em 1.4em;
     border-radius:0.15em;
@@ -38,9 +38,24 @@
     position:relative;
 }
 
-.profile button:hover {
+.client-page button:hover {
     cursor: pointer;
 }
-.profile button:active{
+.client-page button:active{
     top:0.1em;
+}
+
+
+/* ===== edit modal ===== */
+.client-form {
+    display: grid; 
+    grid-template-columns: 3fr 5fr 5fr 3fr;
+}
+
+.edit-col1 {
+    grid-column: 2; 
+}
+
+.edit-col2 {
+    grid-column: 3; 
 }

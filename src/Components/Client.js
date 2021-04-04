@@ -59,6 +59,8 @@ const Client = ({ match }) => {
 					<div>
 						<h2>Edit this client:</h2>
 						<form className='client-form' onSubmit={handleSubmit}>
+
+							<div className='edit-col1'>
 							<label className='edit-name-label' />
 							Client name:
 							<input
@@ -96,6 +98,9 @@ const Client = ({ match }) => {
 								value={client.phoneNumber}
 								className='edit-name-input'
 							/>
+							</div>
+
+							<div className='edit-col2'>
 							<br />
 							<label className='edit-name-label' />
 							Next Steps:
@@ -133,9 +138,15 @@ const Client = ({ match }) => {
 								name='image'
 								value={client.image}
 							/>
+							</div>
+
+
 							<br />
-							<button type='submit'>Submit</button>
-							<button onClick={closeModal}>Close</button>
+
+							
+								<button type='submit'>Submit</button>
+								<button onClick={closeModal}>Close</button>
+
 						</form>
 					</div>
 				</div>

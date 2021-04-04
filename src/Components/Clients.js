@@ -16,7 +16,6 @@ const Clients = ({ match }) => {
 
 	return (
 		<div>
-
 			<header className='page-header'>
 				<h1 className='header-text'>Clients</h1>
 			</header>
