@@ -19,9 +19,6 @@ const Clients = ({ match }) => {
 
 			<header className='page-header'>
 				<h1 className='header-text'>Clients</h1>
-				<Link to='/add-client'>
-					<button className='header-button'>Add Client</button>
-				</Link>
 			</header>
 
 			{clients.map((item) => {
