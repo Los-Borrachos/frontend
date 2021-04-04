@@ -13,8 +13,8 @@ const Client = ({ match }) => {
 			.get(`${APIurl}/clients/${match.params.clientID}`)
 			.then((data) => setClient(data))
 			.catch(console.error);
-	}, []);
-	console.log(client);
+	},);
+	
 
 	const handleChange = (event) => {
 		setClient({ ...client, [event.target.name]: event.target.value });
@@ -152,7 +152,7 @@ const Client = ({ match }) => {
 					<img
 						className='images'
 						src={client.data.image}
-						onerror="this.onerror=null; this.src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'"
+						
 						alt=''
 					/>
 				</ul>

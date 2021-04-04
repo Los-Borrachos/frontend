@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import '../CSS/Login.css';
@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 
 function Login(props) {
-	console.log(props)
+	
 	const initialState = {
 		username: '',
 		password: '',
@@ -26,12 +26,12 @@ function Login(props) {
 			userName: formState.username,
 			password: formState.password,
 		};
-		console.log(credentials);
+		
 		axios
 			.post('http://localhost:5000/users/signin', credentials, {})
 			.then((res) => {
 				if (res.status === 200) {
-					console.log('path somewhere')
+				
 					props.setToken(res.data.token)
 					localStorage.setItem("token",res.data.token)
 

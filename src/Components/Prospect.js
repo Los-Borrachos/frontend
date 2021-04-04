@@ -12,8 +12,8 @@ const Prospect = ({ match }) => {
 			.get(`${APIurl}/prospects/${match.params.prospectID}`)
 			.then((data) => setProspect(data))
 			.catch(console.error);
-	}, []);
-	console.log(prospect);
+	}, );
+	
 
 	const handleChange = (event) => {
 		setProspect({ ...prospect, [event.target.name]: event.target.value });
@@ -151,7 +151,7 @@ const Prospect = ({ match }) => {
 				<img
 					className='images'
 					src={prospect.data.image}
-					onerror="this.onerror=null; this.src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'"
+					
 					alt=''
 				/>
 			</ul>
