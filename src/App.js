@@ -12,7 +12,7 @@ import Prospects from './Components/Prospects.js';
 import AddProspect from './Components/AddProspect.js';
 import SignUp from "./Components/SignUp"
 function App() {
-	const [token, setToken] = useState('');
+	const [token, setToken] = useState(localStorage.getItem("token") ? localStorage.getItem("token") : "" );
 	function logout() {
 		localStorage.removeItem('token');
 		setToken('');

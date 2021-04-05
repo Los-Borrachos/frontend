@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import '../CSS/Login.css';
-import { Link } from 'react-router-dom';
+
 
 
 function Login(props) {
@@ -76,7 +76,7 @@ function Login(props) {
 				/>
 				
 
-				<Link></Link><button type='submit'>Sign In</button>
+				<button type='submit'>Sign In</button>
 				{valid ? <p></p> : <p className = "bad">Bad login, try again</p>}
 			</form>
 		</div>
