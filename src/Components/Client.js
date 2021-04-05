@@ -2,7 +2,8 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { useHistory, Link } from 'react-router-dom';
 import APIurl from '../config';
-
+import '../CSS/Client.css';
+import '../CSS/AddProspect.css';
 
 const Client = ({ match }) => {
 	const history = useHistory();
@@ -14,10 +15,10 @@ const Client = ({ match }) => {
 			.then((data) => setClient(data))
 			.catch(console.error);
 	}, []);
-	console.log(client);
 
 	const handleChange = (event) => {
-		setClient({ ...client, [event.target.name]: event.target.value });
+		setClient({ ...client, [event.target.name]: event.target.value});
+		console.log(client.data)
 	};
 
 	const editShowPage = () => {
@@ -57,111 +58,140 @@ const Client = ({ match }) => {
 				<div>
 					<div>
 						<h2>Edit this client:</h2>
-						<form className='client-form' onSubmit={handleSubmit}>
-							<label className='edit-name-label' />
-							Client name:
-							<input
-								onChange={handleChange}
-								name='name'
-								placeholder='Name'
-								value={client.name}
-								className='edit-name-input'
-							/>
-							<label className='edit-name-label' />
-							Organization:
-							<input
-								onChange={handleChange}
-								name='organization'
-								placeholder='Org'
-								value={client.organization}
-								className='edit-name-input'
-							/>
-							<br />
-							<label className='edit-name-label' />
-							Email:
-							<input
-								onChange={handleChange}
-								name='email'
-								placeholder='Email'
-								value={client.email}
-								className='edit-name-input'
-							/>
-							<label className='edit-name-label' />
-							Phone:
-							<input
-								onChange={handleChange}
-								name='phoneNumber'
-								placeholder='Phone'
-								value={client.phoneNumber}
-								className='edit-name-input'
-							/>
-							<br />
-							<label className='edit-name-label' />
-							Next Steps:
-							<input
-								onChange={handleChange}
-								name='nextSteps'
-								placeholder='Step'
-								value={client.nextSteps}
-								className='edit-name-input'
-							/>
-							<label className='edit-name-label' />
-							Sales Stage:
-							<input
-								onChange={handleChange}
-								name='salesStage'
-								placeholder='Stage'
-								value={client.salesStage}
-								className='edit-name-input'
-							/>
-							<label className='edit-name-label' />
-							Revenue:
-							<br />
-							<input
-								onChange={handleChange}
-								type='number'
-								placeholder='Revenue'
-								name='totalRevenue'
-								value={client.totalRevenue}
-								className='edit-name-input'
-							/>
-							Image
-							<input
-								onChange={handleChange}
-								type='text'
-								name='image'
-								value={client.image}
-							/>
-							<br />
-							<button type='submit'>Submit</button>
-							<button onClick={closeModal}>Close</button>
+						<form onSubmit={handleSubmit} className='prospect-form'>
+							<div className='add-prospect-col1'>
+								<div className='field'>
+									<label className='add-prospect-label'>Client Name: </label>
+									<input
+										onChange={handleChange}
+										name='name'
+										placeholder='Name'
+										value={client.name}
+										className='add-prospect-input'
+									/>
+								</div>
+
+								<div className='field'>
+									<label className='add-prospect-label'>Organization: </label>
+									<input
+										onChange={handleChange}
+										name='organization'
+										placeholder='Org'
+										className='add-prospect-input'
+									/>
+								</div>
+
+								<div className='field'>
+									<label className='add-prospect-label'>Email: </label>
+									<input
+										onChange={handleChange}
+										name='email'
+										placeholder='Email'
+										className='add-prospect-input'
+									/>
+								</div>
+
+								<div className='field'>
+									<label className='add-prospect-label'>Phone: </label>
+									<input
+										onChange={handleChange}
+										name='phoneNumber'
+										placeholder='Phone'
+										className='add-prospect-input'
+									/>
+								</div>
+							</div>
+
+							<div className='add-prospect-col2'>
+								<div className='field'>
+									<label className='add-prospect-label'>Next Steps: </label>
+									<input
+										onChange={handleChange}
+										name='nextSteps'
+										placeholder='Step'
+										className='add-prospect-input'
+									/>
+								</div>
+
+								<div className='field'>
+									<label className='add-prospect-label'>Sales Stage: </label>
+									<input
+										onChange={handleChange}
+										name='salesStage'
+										placeholder='Stage'
+										className='add-prospect-input'
+									/>
+								</div>
+
+								<div className='field'>
+									<label className='add-prospect-label'>Total Revenue: </label>
+									<input
+										type='number'
+										onChange={handleChange}
+										name='totalRevenue'
+										placeholder='Revenue'
+										className='add-prospect-input'
+									/>
+								</div>
+
+								<div className='field'>
+									<label className='add-prospect-label'>Image Link: </label>
+									<input
+										onChange={handleChange}
+										name='image'
+										placeholder='image link'
+										className='add-prospect-input'
+									/>
+								</div>
+							</div>
+
+							<div className='form-buttons'>
+								<button
+									id='submit'
+									type='submit'
+									value='Submit'
+									className='add-prospect-button'>
+									Submit
+								</button>
+								
+									<button className='add-prospect-button' onClick = {closeModal}>Close</button>
+								
+							</div>
 						</form>
 					</div>
 				</div>
 			) : null}
 
-			<h3> Client: {client.data.name} </h3>
-			<div className='name-container'>
-				<ul>
-					<li>Email: {client.data.email}</li>
-					<li>Phone: {client.data.phoneNumber}</li>
-					<li>Organization: {client.data.organization}</li>
-					<li>Next Steps: {client.data.nextSteps}</li>
-					<li>Sales Stage: {client.data.salesStage}</li>
-					<li>Revenue: ${client.data.totalRevenue}</li>
+			<div className='profile'>
+				<header className='profile-header'>
+					<h3>Client: {client.data.name}</h3>
 					<img
 						className='images'
 						src={client.data.image}
 						onerror="this.onerror=null; this.src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'"
-						alt=''
+						alt={client.data.name}
 					/>
-				</ul>
-				<button onClick={editShowPage}>Edit</button>
-				<button onClick={handleDelete}>Delete</button>
-				<br />
-				<Link to='/clients'>
-					<button>Back</button>
-				</Link>
+				</header>
+
+				<div className='info-container'>
+					<ul>
+						<li>Email: {client.data.email}</li>
+						<li>Phone: {client.data.phoneNumber}</li>
+						<li>Organization: {client.data.organization}</li>
+						<li>Next Steps: {client.data.nextSteps}</li>
+						<li>Sales Stage: {client.data.salesStage}</li>
+						<li>Revenue: ${client.data.totalRevenue}</li>
+					</ul>
+
+					<div className='profile-buttons'>
+						<button onClick={editShowPage}>Edit</button>
+						<button onClick={handleDelete}>Delete</button>
+<br/>
+						<Link to='/clients'>
+							<button>Return</button>
+						</Link>
+					</div>
+				</div>
 			</div>
 		</div>
 	);

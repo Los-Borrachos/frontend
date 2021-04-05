@@ -2,6 +2,8 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { useHistory, Link } from 'react-router-dom';
 import APIurl from '../config';
+import '../CSS/Client.css'
+import '../CSS/AddProspect.css'
 
 const Prospect = ({ match }) => {
 	const history = useHistory();
@@ -13,7 +15,7 @@ const Prospect = ({ match }) => {
 			.then((data) => setProspect(data))
 			.catch(console.error);
 	}, []);
-	console.log(prospect);
+	
 
 	const handleChange = (event) => {
 		setProspect({ ...prospect, [event.target.name]: event.target.value });
@@ -62,105 +64,141 @@ const Prospect = ({ match }) => {
 				<div>
 					<div>
 						<h2>Edit this Prospect:</h2>
-						<form className='prospect-form' onSubmit={handleSubmit}>
-							<label htmlFor='name' />
-							Prospect name:
-							<input
-								onChange={handleChange}
-								name='name'
-								placeholder='Name'
-								value={prospect.name}
-							/>
-							<label htmlFor='organization' />
-							Organization:
-							<input
-								onChange={handleChange}
-								name='organization'
-								placeholder='Org'
-								value={prospect.organization}
-							/>
-							<br />
-							<label htmlFor='email' />
-							Email:
-							<input
-								onChange={handleChange}
-								name='email'
-								placeholder='Email'
-								value={prospect.email}
-							/>
-							<label htmlFor='email' />
-							Phone:
-							<input
-								onChange={handleChange}
-								name='phoneNumber'
-								placeholder='Phone'
-								value={prospect.phoneNumber}
-							/>
-							<br />
-							<label htmlFor='nextSteps' />
-							Next Steps:
-							<input
-								onChange={handleChange}
-								name='nextSteps'
-								placeholder='Step'
-								value={prospect.nextSteps}
-							/>
-							<label htmlFor='salesStage' />
-							Sales Stage:
-							<input
-								onChange={handleChange}
-								name='salesStage'
-								placeholder='Stage'
-								value={prospect.salesStage}
-							/>
-							<br />
-							<label htmlFor='totalRevenue' />
-							Revenue:
-							<input
-								onChange={handleChange}
-								type='number'
-								name='totalRevenue'
-								placeholder='Revenue'
-								value={prospect.totalRevenue}
-							/>
-							<br />
-							Image
-							<input
-								onChange={handleChange}
-								type='text'
-								name='image'
-								value={prospect.image}
-							/>
-							<br />
-							<button type='submit'>Submit</button>
-							<button onClick={closeModal}>Close</button>
+						<form onSubmit={handleSubmit} className='prospect-form'>
+							<div className='add-prospect-col1'>
+								<div className='field'>
+									<label className='add-prospect-label'>Name: </label>
+									<input
+										onChange={handleChange}
+										name='name'
+										placeholder='Name'
+										value={prospect.name}
+										className='add-prospect-input'
+									/>
+								</div>
+
+								<div className='field'>
+									<label className='add-prospect-label'>Organization: </label>
+									<input
+										onChange={handleChange}
+										name='organization'
+										placeholder='Org'
+										className='add-prospect-input'
+									/>
+								</div>
+
+								<div className='field'>
+									<label className='add-prospect-label'>Email: </label>
+									<input
+										onChange={handleChange}
+										name='email'
+										placeholder='Email'
+										className='add-prospect-input'
+									/>
+								</div>
+
+								<div className='field'>
+									<label className='add-prospect-label'>Phone: </label>
+									<input
+										onChange={handleChange}
+										name='phoneNumber'
+										placeholder='Phone'
+										className='add-prospect-input'
+									/>
+								</div>
+							</div>
+
+							<div className='add-prospect-col2'>
+								<div className='field'>
+									<label className='add-prospect-label'>Next Steps: </label>
+									<input
+										onChange={handleChange}
+										name='nextSteps'
+										placeholder='Step'
+										className='add-prospect-input'
+									/>
+								</div>
+
+								<div className='field'>
+									<label className='add-prospect-label'>Sales Stage: </label>
+									<input
+										onChange={handleChange}
+										name='salesStage'
+										placeholder='Stage'
+										className='add-prospect-input'
+									/>
+								</div>
+
+								<div className='field'>
+									<label className='add-prospect-label'>Total Revenue: </label>
+									<input
+										type='number'
+										onChange={handleChange}
+										name='totalRevenue'
+										placeholder='Revenue'
+										className='add-prospect-input'
+									/>
+								</div>
+
+								<div className='field'>
+									<label className='add-prospect-label'>Image Link: </label>
+									<input
+										onChange={handleChange}
+										name='image'
+										placeholder='image link'
+										className='add-prospect-input'
+									/>
+								</div>
+							</div>
+
+							<div className='form-buttons'>
+								<button
+									id='submit'
+									type='submit'
+									value='Submit'
+									className='add-prospect-button'>
+									Submit
+								</button>
+								
+									<button className='add-prospect-button' onClick = {closeModal}>Close</button>
+								
+							</div>
 						</form>
 					</div>
 				</div>
 			) : null}
 
-			<h3> Prospect: {prospect.data.name} </h3>
-			<ul>
-				<li>Email: {prospect.data.email}</li>
-				<li>Phone: {prospect.data.phoneNumber}</li>
-				<li>Organization: {prospect.data.organization}</li>
-				<li>Next Steps: {prospect.data.nextSteps}</li>
-				<li>Sales Stage: {prospect.data.salesStage}</li>
-				<li>Revenue: ${prospect.data.totalRevenue}</li>
-				<li>Picture Link: {prospect.data.image}</li>
-				<img
-					className='images'
-					src={prospect.data.image}
-					onerror="this.onerror=null; this.src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'"
-					alt=''
-				/>
-			</ul>
-			<button onClick={editShowPage}>Edit</button>
-			<button onClick={handleDelete}>Delete</button>
-			<button onClick={transferClient}>Transfer to Client</button>
-			<Link to='/prospects'>
-				<button>Return</button>
-			</Link>
+			<div className='profile'>
+				<header className='profile-header'>
+					<h3>Prospect: {prospect.data.name}</h3>
+					<img
+						className='images'
+						src={prospect.data.image}
+						onerror="this.onerror=null; this.src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'"
+						alt=''
+					/>
+				</header>
+
+				<div className='info-container'>
+					<ul>
+						<li>Email: {prospect.data.email}</li>
+						<li>Phone: {prospect.data.phoneNumber}</li>
+						<li>Organization: {prospect.data.organization}</li>
+						<li>Next Steps: {prospect.data.nextSteps}</li>
+						<li>Sales Stage: {prospect.data.salesStage}</li>
+						<li>Revenue: ${prospect.data.totalRevenue}</li>
+					</ul>
+
+					<div className='profile-buttons client-page'>
+						<button onClick={editShowPage}>Edit</button>
+						<button onClick={handleDelete}>Delete</button>
+						<button onClick={transferClient}>Transfer to Client</button>
+						<Link to='/prospects'>
+							<button>Return</button>
+						</Link>
+					</div>
+				</div>
+			</div>
 		</div>
 	);
 };
