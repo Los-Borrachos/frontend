@@ -7,7 +7,7 @@ Hound is a CRM system in which businesses and orgnanization keep in touch with t
 
 #### Initial wireframe 
 <p align='center'>
-<img src='https://media.git.generalassemb.ly/user/34081/files/ff5baf80-85ac-11eb-972f-bb9aa6f202bb'>
+<img width='520px' height='340px' src='https://media.git.generalassemb.ly/user/34081/files/3265f180-95f5-11eb-82aa-3a2b6f7ee3df'>
 </p>
 
 #### End Results
@@ -22,7 +22,7 @@ Hound is a CRM system in which businesses and orgnanization keep in touch with t
 - Framer 
 
 #### Installation Instructions
-All dependencies are provided. Fork and clone adjacent backend file and run ```npm i run 
+All dependencies are provided. Fork and clone adjacent backend file and run - npm i 
 
 ## User Stories 👩‍💻👨‍💻
 - As a user, I want to be able to see records of clients, and select them for a more detailed view ( email, name, organization, revenue)
@@ -34,4 +34,3 @@ All dependencies are provided. Fork and clone adjacent backend file and run ```n
 - Sign in/Sign out featur
 - Styled animation
 - Convert prospect to client with a push of a button 
-
