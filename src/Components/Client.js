@@ -14,10 +14,11 @@ const Client = ({ match }) => {
 			.get(`${APIurl}/clients/${match.params.clientID}`)
 			.then((data) => setClient(data))
 			.catch(console.error);
-	});
+	}, []);
 
 	const handleChange = (event) => {
-		setClient({ ...client, [event.target.name]: event.target.value });
+		setClient({ ...client, [event.target.name]: event.target.value});
+		console.log(client.data)
 	};
 
 	const editShowPage = () => {
@@ -60,7 +61,7 @@ const Client = ({ match }) => {
 						<form onSubmit={handleSubmit} className='prospect-form'>
 							<div className='add-prospect-col1'>
 								<div className='field'>
-									<label className='add-prospect-label'>Name: </label>
+									<label className='add-prospect-label'>Client Name: </label>
 									<input
 										onChange={handleChange}
 										name='name'
@@ -152,9 +153,9 @@ const Client = ({ match }) => {
 									className='add-prospect-button'>
 									Submit
 								</button>
-								<Link to='/clients'>
-									<button className='add-prospect-button'>Close</button>
-								</Link>
+								
+									<button className='add-prospect-button' onClick = {closeModal}>Close</button>
+								
 							</div>
 						</form>
 					</div>
@@ -185,7 +186,7 @@ const Client = ({ match }) => {
 					<div className='profile-buttons'>
 						<button onClick={editShowPage}>Edit</button>
 						<button onClick={handleDelete}>Delete</button>
-
+<br/>
 						<Link to='/clients'>
 							<button>Return</button>
 						</Link>

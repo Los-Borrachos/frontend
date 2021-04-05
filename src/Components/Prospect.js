@@ -14,7 +14,7 @@ const Prospect = ({ match }) => {
 			.get(`${APIurl}/prospects/${match.params.prospectID}`)
 			.then((data) => setProspect(data))
 			.catch(console.error);
-	}, );
+	}, []);
 	
 
 	const handleChange = (event) => {
@@ -159,9 +159,9 @@ const Prospect = ({ match }) => {
 									className='add-prospect-button'>
 									Submit
 								</button>
-								<Link to='/prospects'>
-									<button className='add-prospect-button'>Close</button>
-								</Link>
+								
+									<button className='add-prospect-button' onClick = {closeModal}>Close</button>
+								
 							</div>
 						</form>
 					</div>
